@@ -51,7 +51,7 @@ with st.sidebar:
 
 # Main Page and Timer:
 # Timer Configuration
-start_date = datetime.datetime(2025, 1, 5, 20, 17, 0)  # Jan 30, 5:00 PM
+start_date = datetime.datetime(2025, 1, 30, 17, 0, 0)  # Jan 30, 5:00 PM
 end_date = start_date + datetime.timedelta(hours=24)  # 24-hour timer
 
 # Timer Display
