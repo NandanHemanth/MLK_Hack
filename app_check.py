@@ -4,18 +4,39 @@ import networkx as nx
 import datetime
 import time as tm
 
-import base64
-
 # Convert local image to Base64
 def get_image_base64(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
-# Embed logo using Base64
+# Base64 encoded logo (replace "logo.png" with your logo file path)
 logo_base64 = get_image_base64("logo.png")
+
+# Add CSS for styling and logo placement
 st.markdown(
     f"""
     <style>
+    header {{visibility: hidden;}}
+    footer {{visibility: hidden;}}
+    body {{
+        background-color: #800020; /* Burgundy Red */
+        color: white; /* Make text white for better contrast */
+        font-family: 'IBM Plex Sans', sans-serif; /* Set font globally */
+    }}
+    .stApp {{
+        background-color: #800020 !important; /* Ensure main content has the same background */
+        color: white; /* Set default text color */
+        font-family: 'IBM Plex Sans', sans-serif;
+    }}
+    div[data-testid="stSidebar"] {{
+        background-color: #800020 !important; /* Sidebar background */
+        color: white;
+        font-family: 'IBM Plex Sans', sans-serif;
+    }}
+    h1, h2, h3, h4, h5, h6 {{
+        color: white !important; /* Ensure headings remain visible */
+        font-family: 'IBM Plex Sans', sans-serif;
+    }}
     .logo-container {{
         position: fixed;
         top: 10px;
@@ -23,7 +44,7 @@ st.markdown(
         z-index: 10;
     }}
     .logo {{
-        width: 120px;
+        width: 120px; /* Adjust the size of the logo */
     }}
     </style>
     <div class="logo-container">
@@ -32,8 +53,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-
 
 # Hackathon Itinerary Data
 itinerary = [
