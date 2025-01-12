@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import datetime
 import time as tm
+import base64
 
 # Convert local image to Base64
 def get_image_base64(image_path):
