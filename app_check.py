@@ -47,24 +47,6 @@ st.markdown(
     .logo {{
         width: 120px; /* Adjust the size of the logo */
     }}
-    .center-buttons {{
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }}
-    .button {{
-        width: 200px;
-        padding: 10px 0;
-        font-size: 18px;
-        text-align: center;
-        background-color: white;
-        color: #800020;
-        border: none;
-        border-radius: 8px;
-        font-family: 'IBM Plex Sans', sans-serif;
-        cursor: pointer;
-    }}
-    
     </style>
     <div class="logo-container">
         <img src="data:image/png;base64,{logo_base64}" alt="Logo" class="logo">
@@ -92,7 +74,7 @@ itinerary = [
 
 # Heading and Description
 st.title("MLK Hackathon")
-st.write("Welcome to the MLK Hackathon! Honouring Dr. King's Legacy to achieve equality, justice and change for all, let's come together to innovate for a better tomorrow. Good Luck!!!")
+st.write("Welcome to the MLK Hackathon! ")
 
 # Create Directed Graph for Timeline
 G = nx.DiGraph()
@@ -142,33 +124,6 @@ elif time_left.total_seconds() > 0:
     st.markdown(f"<h1 style='text-align: center; font-size: 150px;'>{int(hours):02d}:{int(minutes):02d}:{int(seconds):02d}</h1>", unsafe_allow_html=True)
 else:
     st.markdown("<h1 style='text-align: center; font-size: 50px;'>🎉 The Hackathon has ended!</h1>", unsafe_allow_html=True)
-
-# Announcements Section
-st.markdown("---")
-st.header("📢 Announcements")
-announcements = [
-    "1. Judging starts at 5:00 PM.",
-    "2. Refreshments are available in the main hall.",
-    "3. Submit your final projects by 4:30 PM."
-]
-for announcement in announcements:
-    st.write(announcement)
-
-st.markdown("")
-st.markdown("")
-
-# Centered Buttons Section
-st.markdown(
-    """
-    <div class="center-buttons">
-        <a href="https://drive.google.com/file/d/1farAE0Pfj2s1CH21hIbHNHqL8gZ-OHcP/view?usp=sharing" target="_blank">
-            <button class="button">View Tracks</button>
-        </a>
-        <button class="button" onclick="alert('Need help? Contact:\\n\\nEmail: support@mlkhackathon.com\\nPhone: +1-800-123-4567')">Help</button>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
 
 # Auto-refresh Timer (use Streamlit Auto Refresh workaround)
 tm.sleep(1)
