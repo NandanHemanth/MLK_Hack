@@ -64,7 +64,7 @@ if current_time < start_date:
     hours, seconds = divmod(seconds, 3600)
     minutes, seconds = divmod(seconds, 60)
     st.markdown(f"<h1 style='text-align: center; font-size: 50px;'>⏳ Hackathon starts in:</h1>", unsafe_allow_html=True)
-    st.markdown(f"<h1 style='text-align: center; font-size: 150px;'>{int(hours):02d}:{int(minutes):02d}:{int(seconds):02d}</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align: center; font-size: 150px;'>{int(days):02d}:{int(hours):02d}:{int(minutes):02d}</h1>", unsafe_allow_html=True)
 elif time_left.total_seconds() > 0:
     days, seconds = divmod(time_left.total_seconds(), 86400)
     hours, seconds = divmod(seconds, 3600)

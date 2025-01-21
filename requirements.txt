@@ -1,6 +1,3 @@
 streamlit
 matplotlib
-pandas
-time
-datetime
 networkx
